@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matt Greer — Music &amp; Audio Software</title>
+  <meta name="description" content="Music producer and audio plugin developer. Tracks, JUCE/C++ plugins, and the code behind them.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+</head>
+<body data-page="home">
+
+  <div id="site-header"></div>
+
+  <main>
+    <section class="hero">
+      <!-- Decorative signature visual, not informational — hidden from
+           assistive tech rather than read aloud as meaningless markup. -->
+      <div class="hero-waveform" aria-hidden="true"></div>
+
+      <h1>I make music. Then I build the tools to make it sound the way I hear it.</h1>
+      <p class="hero-sub">
+        Matt Greer, producing as MSG — JUCE/C++ underneath. KickDucker's shipped; Preverb's next.
+      </p>
+
+      <div class="hero-actions">
+        <a href="music.html" class="is-primary">Listen</a>
+        <a href="plugins.html">Explore plugins</a>
+        <a href="projects.html">See the code</a>
+      </div>
+    </section>
+
+    <section class="entry-grid" aria-label="Site sections">
+      <a class="entry-card" href="music.html">
+        <span class="eyebrow">Listen</span>
+        <h2>Music</h2>
+        <p>Tracks as MSG — Spotify, SoundCloud, YouTube, plus a few previews here.</p>
+        <span class="entry-cta">Explore the music →</span>
+      </a>
+
+      <a class="entry-card" href="plugins.html">
+        <span class="eyebrow">Build</span>
+        <h2>Plugins</h2>
+        <p>KickDucker, shipped. Preverb, in development. Both JUCE/C++.</p>
+        <span class="entry-cta">See the plugins →</span>
+      </a>
+
+      <a class="entry-card" href="projects.html">
+        <span class="eyebrow">Code</span>
+        <h2>Projects</h2>
+        <p>CourseCupid, BudgetBuddy, and other software work outside the audio world.</p>
+        <span class="entry-cta">Browse the code →</span>
+      </a>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/include-partials.js"></script>
+  <script src="assets/js/hero-waveform.js"></script>
+</body>
+</html>

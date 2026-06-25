@@ -1,0 +1,26 @@
+/*
+ * projects.css
+ *
+ * Projects-page-only layout. Reuses .feature-card from base.css so this
+ * page reads as a sibling of Plugins rather than a separately-designed
+ * page — this file only adds the role/contribution line that's specific
+ * to how group projects are described.
+ */
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.feature-card .contribution {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.feature-card .contribution strong {
+  color: var(--color-text);
+  font-weight: 500;
+}

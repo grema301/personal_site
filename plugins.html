@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matt Greer — Plugins</title>
+  <meta name="description" content="VST3 audio plugins written in C++ with JUCE — KickDucker, shipped, and Preverb, in development.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/plugins.css">
+</head>
+<body data-page="plugins">
+
+  <div id="site-header"></div>
+
+  <main>
+    <div class="page-intro">
+      <span class="eyebrow">Build</span>
+      <h1>Plugins</h1>
+      <p class="lede">VST3 plugins, written in C++ with JUCE. Each one exists because I wanted a tool that didn't exist yet.</p>
+    </div>
+
+    <!-- Each plugin is its own <article>, fully self-contained, so this
+         is easy to split into separate pages later if one of them
+         outgrows sharing the page — copy the <article>, give it its own
+         file, done. -->
+    <div class="plugin-list">
+      <article class="feature-card" id="kickducker">
+        <div class="feature-head">
+          <h2>KickDucker</h2>
+          <span class="status-pill status-pill--shipped">Shipped</span>
+        </div>
+        <p class="feature-summary">A sidechain-driven dynamic EQ. It runs real-time YIN pitch detection on a bass or 808 signal and ducks the kick drum at that signal's fundamental frequency — and its harmonics — instead of the whole low end, so the kick keeps its punch without fighting the bass for space.</p>
+        <ul class="feature-list">
+          <li>Envelope-following attack and release</li>
+          <li>Harmonic attenuation at 2×, 3×, and 4× the fundamental</li>
+          <li>Note quantisation and frequency lock</li>
+          <li>Wet/dry mix</li>
+          <li>FFT spectrum visualiser</li>
+        </ul>
+        <ul class="tag-list">
+          <li class="tag">VST3</li>
+          <li class="tag">C++</li>
+          <li class="tag">JUCE</li>
+        </ul>
+        <div class="feature-footer">
+          <!-- Swap for the real repo URL. -->
+          <a class="card-link" href="[KICKDUCKER_REPO_URL]" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+      </article>
+
+      <article class="feature-card" id="preverb">
+        <div class="feature-head">
+          <h2>Preverb</h2>
+          <span class="status-pill status-pill--dev">In development</span>
+        </div>
+        <p class="feature-summary">A reverse-reverb tail generator — the rising swoosh that leads into a sound, produced as a single plugin instead of the usual manual workaround of reversing audio, printing a reverb, and reversing it back.</p>
+        <p class="build-note">Currently working through the lookahead buffer and latency design — sizing the buffer correctly before any of the reverb engine gets written.</p>
+        <ul class="tag-list">
+          <li class="tag">VST3</li>
+          <li class="tag">C++</li>
+          <li class="tag">JUCE</li>
+        </ul>
+        <!-- No feature-footer / repo link yet on purpose — there's no
+             working build to point to. Add one back once that changes. -->
+      </article>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/include-partials.js"></script>
+</body>
+</html>

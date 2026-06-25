@@ -1,0 +1,326 @@
+/*
+ * base.css
+ *
+ * Cross-page baseline: typography, the header, and the footer. This file
+ * is what makes every page feel like the same site, regardless of what
+ * page-specific CSS (home.css, etc.) layers on top of it. Always
+ * references tokens.css variables rather than raw values.
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Hints the browser to render native form controls — including the
+   <audio> player on the Music page — in their dark variant rather than
+   the default light-gray one, so they don't look like a foreign object
+   dropped onto a dark page. */
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 var(--space-3) 0;
+}
+
+p {
+  margin: 0 0 var(--space-3) 0;
+  color: var(--color-text-muted);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
+/* Visible keyboard focus everywhere — this is non-negotiable for
+   accessibility, not a nice-to-have. */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* --- Header --- */
+
+.site-header {
+  border-bottom: 1px solid var(--color-line);
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-4);
+}
+
+.logo {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.main-nav ul {
+  display: flex;
+  gap: var(--space-5);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.main-nav a.is-active {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+
+/* --- Generic page container (used by stub pages for now) --- */
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4);
+  min-height: 50vh;
+}
+
+/* --- Footer --- */
+
+.site-footer {
+  border-top: 1px solid var(--color-line);
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.footer-links {
+  display: flex;
+  gap: var(--space-4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links a {
+  color: var(--color-text-muted);
+}
+
+/* --- Page intro: eyebrow + h1 + lede, the same opening shape used at
+   the top of every non-home page (Music, Plugins, Projects, About) so
+   they all establish "what is this page" the same way before diverging
+   into their own layouts. --- */
+
+.page-intro {
+  max-width: 60ch;
+  margin-bottom: var(--space-6);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-2);
+}
+
+/* The quiet variant swaps in the muted teal accent. Reserved for
+   contexts tokens.css already calls out as "technical" — About's own
+   label, and anywhere else that wants a cooler, lower-key register than
+   the amber used for primary CTAs and identity. */
+.eyebrow.is-quiet {
+  color: var(--color-accent-quiet);
+}
+
+.page-intro h1 {
+  margin-bottom: var(--space-3);
+}
+
+.page-intro .lede {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0;
+}
+
+/* --- Tag list: small mono pills naming a tech stack. Teal, not amber —
+   amber stays reserved for the signature accent / primary actions. --- */
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  list-style: none;
+  margin: 0 0 var(--space-4) 0;
+  padding: 0;
+}
+
+.tag-list .tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  color: var(--color-accent-quiet);
+  border: 1px solid var(--color-accent-quiet);
+  border-radius: var(--radius);
+  padding: 0.2em 0.6em;
+}
+
+/* --- Status pill: shipped / in development / proprietary. Color is
+   load-bearing here, not decorative — it's the fastest way to read a
+   plugin or project's state at a glance. --- */
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.25em 0.7em;
+  border-radius: var(--radius);
+  border: 1px solid currentColor;
+}
+
+.status-pill--shipped {
+  color: var(--color-accent);
+}
+
+.status-pill--dev {
+  color: var(--color-accent-quiet);
+}
+
+.status-pill--proprietary {
+  color: var(--color-text-muted);
+}
+
+/* --- Feature card: the shared shell behind each plugin (Plugins page)
+   and each project (Projects page). Lives here rather than in either
+   page's own stylesheet because both pages need exactly the same shape;
+   each page's CSS only adds what's specific to it on top. --- */
+
+.feature-card {
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  padding: var(--space-5);
+  background: var(--color-surface);
+}
+
+.feature-card .feature-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.feature-card h2 {
+  margin-bottom: 0;
+  font-size: 1.6rem;
+}
+
+.feature-card .feature-summary {
+  font-size: 1rem;
+}
+
+.feature-card .feature-list {
+  margin: 0 0 var(--space-4) 0;
+  padding-left: 1.1em;
+  color: var(--color-text-muted);
+}
+
+.feature-card .feature-list li {
+  margin-bottom: var(--space-1);
+}
+
+.feature-card .feature-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-line);
+}
+
+/* A link that points off-site (GitHub, etc.) — bordered like a button
+   rather than underlined inline, since it's acting as a call to action
+   rather than a word inside a sentence. */
+.card-link {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-text);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  padding: var(--space-2) var(--space-4);
+}
+
+.card-link:hover,
+.card-link:focus-visible {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+/* Respect reduced-motion preference site-wide */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
