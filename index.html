@@ -3,66 +3,189 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matt Greer — Music &amp; Audio Software</title>
-  <meta name="description" content="Music producer and audio plugin developer. Tracks, JUCE/C++ plugins, and the code behind them.">
-
+  <title>Matt Greer — Software &amp; Audio Developer, Dunedin</title>
+  <meta name="description" content="Matt Greer: Computer Science and Information Science student at the University of Otago. Fonterra automation intern, CourseCupid developer, and creator of the KickDucker and Preverb VST3 plugins.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="assets/css/tokens.css">
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/home.css">
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body data-page="home">
+<body>
 
-  <div id="site-header"></div>
+<header class="nav">
+  <a class="logo" href="#top">matt<span>.</span>greer</a>
+  <nav aria-label="Primary">
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#plugins">Plugins</a>
+    <a href="#about">About</a>
+    <a class="nav-cta" href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <main>
-    <section class="hero">
-      <!-- Decorative signature visual, not informational — hidden from
-           assistive tech rather than read aloud as meaningless markup. -->
-      <div class="hero-waveform" aria-hidden="true"></div>
+<main id="top">
 
-      <h1>I make music. Then I build the tools to make it sound the way I hear it.</h1>
-      <p class="hero-sub">
-        Matt Greer, producing as MSG — JUCE/C++ underneath. KickDucker's shipped; Preverb's next.
-      </p>
+  <section class="hero">
+    <div class="swell" aria-hidden="true"></div>
+    <p class="eyebrow">Computer Science &amp; Information Science · University of Otago · Dunedin</p>
+    <h1>I build software that has to work &mdash; on a factory floor, in a studio, or in front of a few hundred students.</h1>
+    <p class="sub">Final-year BASc student, Fonterra automation intern, and the developer behind two VST3 audio plugins and CourseCupid. Open to graduate roles in Dunedin.</p>
+    <div class="actions">
+      <a class="btn primary" href="#plugins">Download the plugins</a>
+      <a class="btn" href="#projects">See my projects</a>
+      <a class="btn" href="#contact">Get in touch</a>
+    </div>
+    <ul class="facts">
+      <li><strong>3</strong> Fonterra internships</li>
+      <li><strong>2</strong> VST3 plugins, built in C++/JUCE</li>
+      <li><strong>CourseCupid</strong> featured by Otago Computer Science</li>
+    </ul>
+  </section>
 
-      <div class="hero-actions">
-        <a href="music.html" class="is-primary">Listen</a>
-        <a href="plugins.html">Explore plugins</a>
-        <a href="projects.html">See the code</a>
+  <section id="experience" class="reveal">
+    <p class="eyebrow">Experience</p>
+    <h2>Where I've worked and studied</h2>
+    <ol class="timeline">
+      <li>
+        <div class="when">Fonterra<br><small>3 internships</small></div>
+        <div class="what">
+          <h3>Automation Engineering intern <span class="at">Fonterra</span></h3>
+          <!-- TODO: add dates and site/location for each internship here. -->
+          <ul>
+            <li>Built HMI screens in <b>AVEVA InTouch</b> for dairy manufacturing equipment.</li>
+            <li>Standardised <b>PLC tag naming</b> across sites so the same thing is called the same thing everywhere.</li>
+            <li>Developed a Python <b>desktop GUI for tuning PID controllers</b>, packaged as a Windows executable and used in production.</li>
+            <li>Learned to write software that runs unattended for years, not just through a demo.</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="when">2023&ndash;2026<br><small>expected</small></div>
+        <div class="what">
+          <h3>BASc, Computer Science &amp; Information Science <span class="at">University of Otago</span></h3>
+          <!-- TODO: confirm start year, and add grades or highlights if you like. -->
+          <ul>
+            <li>Double major. Coursework spans algorithms, AI/ML, and cryptography and security.</li>
+            <li>CourseCupid was built for a Computer Science paper (see below).</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="when">Before<br><small>Southland</small></div>
+        <div class="what">
+          <h3>Dux, Southland Boys' High School <span class="at">with academic scholarships</span></h3>
+        </div>
+      </li>
+    </ol>
+    <p class="print-hint">Tip: print this page (Ctrl/Cmd+P) for a clean one-page CV.</p>
+  </section>
+
+  <section id="projects" class="reveal">
+    <p class="eyebrow">Projects</p>
+    <h2>Things I've built</h2>
+
+    <article class="card feature" id="coursecupid">
+      <div class="card-head">
+        <h3>CourseCupid</h3>
+        <span class="pill">University group project</span>
       </div>
-    </section>
+      <p class="lead">An AI course-discovery app with a swipe interface, built for a University of Otago Computer Science paper. It grew well beyond the assignment and was shared by Otago Computer Science on social media.</p>
+      <!-- TODO: add the link to the Otago CS post / demo / repo here, e.g. <a class="btn" href="...">Read the post</a> -->
 
-    <section class="entry-grid" aria-label="Site sections">
-      <a class="entry-card" href="music.html">
-        <span class="eyebrow">Listen</span>
-        <h2>Music</h2>
-        <p>Tracks as MSG — Spotify, SoundCloud, YouTube, plus a few previews here.</p>
-        <span class="entry-cta">Explore the music →</span>
-      </a>
+      <ol class="flow" aria-label="How CourseCupid works">
+        <li><b>1. Quiz</b><span>A short quiz captures interests and strengths.</span></li>
+        <li><b>2. Match</b><span>Sentence-transformer embeddings and Gemini rank courses against the answers.</span></li>
+        <li><b>3. Swipe</b><span>Recommended courses arrive as cards to accept or skip.</span></li>
+        <li><b>4. Chat</b><span>Each course has its own "personality" chatbot, served through the Groq API.</span></li>
+      </ol>
 
-      <a class="entry-card" href="plugins.html">
-        <span class="eyebrow">Build</span>
-        <h2>Plugins</h2>
-        <p>KickDucker, shipped. Preverb, in development. Both JUCE/C++.</p>
-        <span class="entry-cta">See the plugins →</span>
-      </a>
+      <div class="cols">
+        <div>
+          <h4>My part</h4>
+          <ul>
+            <li>The chatbot system, including the per-course personalities</li>
+            <li>The frontend messaging UI</li>
+            <li>Backend API routing between the app and the model providers</li>
+          </ul>
+        </div>
+        <div>
+          <h4>What it taught me</h4>
+          <ul>
+            <li>Working in a team on a codebase that kept growing</li>
+            <li>Combining embeddings, an LLM and a chat model without the latency adding up</li>
+            <li>Shipping something real people actually used</li>
+          </ul>
+        </div>
+      </div>
+      <ul class="tags"><li>Python</li><li>Gemini API</li><li>Groq API</li><li>Sentence Transformers</li></ul>
+    </article>
 
-      <a class="entry-card" href="projects.html">
-        <span class="eyebrow">Code</span>
-        <h2>Projects</h2>
-        <p>CourseCupid, BudgetBuddy, and other software work outside the audio world.</p>
-        <span class="entry-cta">Browse the code →</span>
-      </a>
-    </section>
-  </main>
+    <div class="grid2">
+      <article class="card">
+        <div class="card-head"><h3>BudgetBuddy</h3></div>
+        <p class="role"><b>My part:</b> scraping pipeline, Node.js backend, Render deployment.</p>
+        <p>A full-stack grocery price comparison tool. Python scrapers pull live prices from NZ supermarket sites into a Supabase database, surfaced through a searchable frontend.</p>
+        <ul class="tags"><li>Python</li><li>Node.js</li><li>Supabase</li><li>Render</li></ul>
+      </article>
+      <article class="card">
+        <div class="card-head"><h3>Fonterra PID Tuner</h3><span class="pill muted">Proprietary</span></div>
+        <p class="role"><b>Built during:</b> Fonterra internship.</p>
+        <p>A Python desktop app with a full GUI for tuning PID controllers on a dairy manufacturing line. Not public, because it's Fonterra's codebase rather than mine to share.</p>
+        <ul class="tags"><li>Python</li><li>Desktop GUI</li></ul>
+      </article>
+    </div>
+  </section>
 
-  <div id="site-footer"></div>
+  <section id="plugins" class="reveal">
+    <p class="eyebrow">Plugins &amp; downloads</p>
+    <h2>Two VST3 plugins, free to download</h2>
+    <p class="muted-p">Written in C++ with JUCE. Each exists because I wanted a tool that didn't. Downloads come straight from GitHub Releases.</p>
 
-  <script src="assets/js/include-partials.js"></script>
-  <script src="assets/js/hero-waveform.js"></script>
+    <div class="grid2">
+      <article class="card plugin" data-repo="grema301/KickDucker">
+        <div class="card-head"><h3>KickDucker</h3><span class="pill ok">Released</span></div>
+        <img class="shot" src="assets/images/kickducker.png" alt="KickDucker plugin window" loading="lazy" onerror="this.remove()">
+        <!-- Add a screenshot at assets/images/kickducker.png and it appears here. -->
+        <p>A sidechain-driven dynamic EQ. It runs real-time YIN pitch detection on a bass or 808 and ducks the kick at that note's fundamental and harmonics, instead of the whole low end, so the kick keeps its punch without fighting the bass.</p>
+        <ul class="ticks"><li>Envelope-following attack and release</li><li>Ducks 2×, 3× and 4× harmonics</li><li>Note quantisation and frequency lock</li><li>FFT spectrum display</li></ul>
+        <div class="dl"><span class="dl-meta">Latest release on GitHub</span><div class="dl-assets"></div></div>
+        <div class="dl-links"><a class="btn primary" data-latest href="https://github.com/grema301/KickDucker/releases/latest">Download latest</a><a class="btn" href="https://github.com/grema301/KickDucker">Source ↗</a></div>
+      </article>
+
+      <article class="card plugin" data-repo="grema301/Preverb">
+        <div class="card-head"><h3>Preverb</h3><span class="pill ok">Released</span></div>
+        <img class="shot" src="assets/images/preverb.png" alt="Preverb plugin window showing a swell building into a hit" loading="lazy">
+        <p>A reverse-reverb swell generator: the rising whoosh that leads into a vocal or a drum hit, made in one plugin instead of reversing, printing and re-reversing audio by hand. It detects the hit, builds the swell from the sound itself, and lands it exactly on the downbeat.</p>
+        <ul class="ticks"><li>Live mode, or drop in an audio file</li><li>Tempo-synced swell, with a live view of capture and render</li><li>Drag the finished swell straight onto your timeline</li><li>Lookahead switch: bounce with it, then turn the delay off</li></ul>
+        <div class="dl"><span class="dl-meta">Latest release on GitHub</span><div class="dl-assets"></div></div>
+        <div class="dl-links"><a class="btn primary" data-latest href="https://github.com/grema301/Preverb/releases/latest">Download latest</a><a class="btn" href="https://github.com/grema301/Preverb">Source ↗</a></div>
+      </article>
+    </div>
+    <p class="muted-p small">Windows VST3. Run the installer, then rescan plugins in your DAW. Tested in FL Studio.</p>
+  </section>
+
+  <section id="about" class="reveal">
+    <p class="eyebrow">About</p>
+    <h2>Software, with a studio habit</h2>
+    <div class="about">
+      <p>I'm in the final year of a BASc at the University of Otago, double-majoring in Computer Science and Information Science. Most of what I build starts the same way: I want a tool that doesn't exist, so I learn enough to make it.</p>
+      <p>Outside code I produce music as <b>MSG</b>, which is where KickDucker and Preverb came from. I'd like to stay in Dunedin and work with a team face to face.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="reveal">
+    <p class="eyebrow">Contact</p>
+    <h2>Let's talk</h2>
+    <div class="actions">
+      <a class="btn primary" href="https://www.linkedin.com/in/matthew-greer-6aa09333b/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn" href="https://github.com/grema301" target="_blank" rel="noopener">GitHub ↗</a>
+      <!-- TODO: add your email: <a class="btn" href="mailto:you@example.com">Email</a> -->
+    </div>
+  </section>
+</main>
+
+<footer class="foot"><span>© <span id="yr">2026</span> Matt Greer</span><span>Dunedin, New Zealand</span></footer>
+
+<script src="assets/js/site.js"></script>
 </body>
 </html>
